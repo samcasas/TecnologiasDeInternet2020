@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+.body{
+	font-family: verdana;
+}
+
+.h1{
+	color: #333;
+	font-size: 24px;
+}
+
+.txt{
+	line-height: 30px;
+	font-size: 16px;
+	color: #000;
+}
+
+.ingredientes{
+	color: #666; 
+	font-size: 16px
+}
+
+.lista{
+	color: #000;
+	font-size: 12px;
+}
+
+.img-circular {
+	width: 2.5%;
+  border-radius: 50%;
+}
