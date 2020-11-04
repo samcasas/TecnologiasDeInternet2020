@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>inputsum</title>
+</head>
+
+<body>
+	
+	<input type="number" name = "num" id="demo" />
+	<br>
+	<input type="number" name = "num2" id="demo2" />
+	<br>
+	<button type="button" onclick= "mostrar()">mostrar</button>
+	
+	<script>
+		function mostrar(){
+		var x = document.getElementById("demo").value;
+		var y = document.getElementById("demo2").value;
+		var sum = Number(x) + Number(y);
+		alert(sum);	
+		}
+	</script>
+	
+</body>
+</html>
