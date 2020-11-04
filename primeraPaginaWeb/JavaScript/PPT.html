@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Piedra, papel o tijera</title>
+</head>
+
+<body style="font-family: arial">
+	<center>
+	
+	<h1>Piedra papel o tijera</h1>
+	<input type="text" name = "txt" id=	"usuario" />
+	<button type="button" onClick=jugar()>Jugar</button>
+	<p><b>Selección del CPU:</b><p id="prueba"></p></p>
+	<img src="https://doprod-statics.s3.amazonaws.com/pictures/logo/6511/large_f834dbdf-3fd3-492f-8395-5765d6055cbf.png" alt="cpu" id="img" width="200px" height="200px">
+	<img src="https://i.pinimg.com/474x/c3/f7/20/c3f72070f384cf72d0bb757a581072b9.jpg" alt="vs" width="120px">
+	<img src="https://doprod-statics.s3.amazonaws.com/pictures/logo/6511/large_f834dbdf-3fd3-492f-8395-5765d6055cbf.png" alt="cpu" id="imgU" width="200px" height="200px">
+	<h1 id="resultado"></h1>
+	
+	<script>	
+	function jugar(){
+	var x = document.getElementById("usuario").value;
+	var cpu = Math.floor(Math.random()*3)
+	var sel;
+	var image = document.getElementById('img');
+	var imageu = document.getElementById('imgU');
+		
+	if(cpu==0){
+		var sel = "piedra";
+		image.src = "https://aprendescratchdotcom1.files.wordpress.com/2016/07/piedra.jpg?w=766"
+	}else if(cpu==1){
+		var sel = "papel";
+		image.src ="https://thumbs.dreamstime.com/t/rock-paper-scissors-paper-hand-isolated-white-31662022.jpg"
+	}else if(cpu==2){
+		var sel = "tijera";
+		image.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Rock-paper-scissors_%28scissors%29.png/1200px-Rock-paper-scissors_%28scissors%29.png";
+	}
+	document.getElementById("prueba").innerHTML= sel
+	
+		if(x == sel){
+			document.getElementById("resultado").innerHTML= "Empate"
+			
+		}else if(sel=="piedra" && x=="papel"){
+			document.getElementById("resultado").innerHTML= "Ganaste"
+			imageu.src ="https://thumbs.dreamstime.com/t/rock-paper-scissors-paper-hand-isolated-white-31662022.jpg"
+		}else if(sel=="tijera" && x=="papel"){
+			document.getElementById("resultado").innerHTML= "Perdiste"
+			imageu.src ="https://thumbs.dreamstime.com/t/rock-paper-scissors-paper-hand-isolated-white-31662022.jpg"
+		}else if(sel=="papel" && x=="tijera"){
+			document.getElementById("resultado").innerHTML= "Ganaste"
+			imageu.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Rock-paper-scissors_%28scissors%29.png/1200px-Rock-paper-scissors_%28scissors%29.png";
+		}else if(sel=="piedra" && x=="tijera"){
+			document.getElementById("resultado").innerHTML= "Perdiste"
+			imageu.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Rock-paper-scissors_%28scissors%29.png/1200px-Rock-paper-scissors_%28scissors%29.png";
+		}else if(sel=="tijera" && x=="piedra"){
+			document.getElementById("resultado").innerHTML= "Ganaste"
+			imageu.src = "https://aprendescratchdotcom1.files.wordpress.com/2016/07/piedra.jpg?w=766"
+		}else if(sel=="papel" && x=="piedra"){
+			document.getElementById("resultado").innerHTML= "Perdiste"
+			imageu.src = "https://aprendescratchdotcom1.files.wordpress.com/2016/07/piedra.jpg?w=766"
+		}else{
+			document.getElementById("resultado").innerHTML= "Checa tu apuesta"
+		}
+	
+	}
+		
+		
+	</script>
+	</center>
+</body>
+</html>
