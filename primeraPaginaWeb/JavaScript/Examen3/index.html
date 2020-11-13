@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Parcial3</title>
+</head>
+
+<body>
+	<h1>Produccion de manzana</h1>
+	<center><img src="https://api1.columnis.com/uploads/032/images/picture_5c7f3ac6c8340.jpg" alt="Manzanas" id="img" style="width: 23%"></center>
+	<br>
+	<p1>producción Total: </p1>
+	<input type="text" name = "txt" id=	"manTot" value="250" />
+	<button type="button" onclick= "getManzanasTotales()">Numero de manzanas totales</button>
+	<br>
+	<p1>producción Actual: </p1>
+	<input type="text" name = "txt2" id="txtActual" value="0" />
+	<button type="button" onclick= "getManzanasActuales()">Numero de manzanas totales</button>
+	<br>
+	<button type="button" onclick= "getCant5()">+5</button>
+	<button type="button" onclick= "getCant15()">+15</button>
+	<button type="button" onclick= "getCant30()">+30</button>
+	<button type="button" onclick= "getCant50()">+50</button>
+	<br>
+	<p1>Porcentaje: </p1>
+	<input type="text" name = "txt3" id="porcentaje" />
+	<button type="button" onclick= "getPorcentaje()">Calcular</button>
+	<br>
+	<h4>¿Para qué sirve JS?</h1>
+	<p>Para realizar aplicaciones web y por la necesidad de ejecutar programas logicos y funcionales en la web</p>
+	<h4>¿Que significa json?</h4>
+	<p>JavaScript Object Notation</p>
+	<h4>Mencione 2 cosas que se pueden hacer con el inspector de elementos</h4>
+	<ul>
+		<li>Analizar la forma en que esta hecha la pagina</li>
+		<li>Ver los errores de la pagina</li>
+	</ul>
+	<script>
+	
+		
+	function getManzanasTotales(){
+		var x = document.getElementById("manTot").value;
+		alert(x*45 + " Manzanas");
+	}
+		
+	
+	function getCant5(){
+		total = document.getElementById("txtActual").value
+		total = parseInt(total) + 5
+		document.getElementById("txtActual").value = total
+	}
+	
+	function getCant15(){
+		total = document.getElementById("txtActual").value
+		total = parseInt(total) + 15
+		document.getElementById("txtActual").value = total
+	}
+	function getCant30(){
+		total = document.getElementById("txtActual").value
+		total = parseInt(total) + 30
+		document.getElementById("txtActual").value = total
+	}
+	function getCant50(){
+		total = document.getElementById("txtActual").value
+		total = parseInt(total) + 50
+		document.getElementById("txtActual").value = total
+	}
+	
+	function getManzanasActuales(){
+		var y = document.getElementById("txtActual").value;
+		alert(y*45 + " Manzanas");
+	}
+		
+	function getPorcentaje(){
+		var image = document.getElementById('img');
+		
+		tot = document.getElementById("manTot").value
+		act = document.getElementById("txtActual").value
+		var por =(act*100)/tot
+		document.getElementById("porcentaje").value = por
+		if(por >= 70){
+			image.src = "https://thumbs.dreamstime.com/b/mosc-cami%C3%B3n-con-manzanas-en-la-plaza-roja-mosc%C3%BA-rusia-de-octubre-un-maduras-feria-160417245.jpg"
+		}else{
+			image.src = "https://api1.columnis.com/uploads/032/images/picture_5c7f3ac6c8340.jpg"
+		}
+		
+	}
+		
+	</script>
+</body>
+</html>
